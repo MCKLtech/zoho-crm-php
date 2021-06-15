@@ -79,13 +79,13 @@ class ZohoRecords extends ZohoResource
      * Upsert a Record in Zoho
      *
      * @see https://www.zoho.com/crm/developer/docs/api/v2/upsert-records.html
-     * @param string $id
-     * @param $options
+     * @param string $module
+     * @param array $options
      * @return stdClass
      */
-    public function upsert(string $module, $id, array $options)
+    public function upsert(string $module, array $options)
     {
-        return $this->client->post("$module/$id", $options);
+        return $this->client->post("$module/upsert", $options);
     }
 
 
